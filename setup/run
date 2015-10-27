@@ -58,6 +58,8 @@ drush vset file_temporary_path "/tmp"
 drush vset date_default_timezone "America/New_York"
 drush vset site_default_country "US"
 
+echo '$base_url = "https://" . getenv("C9_HOSTNAME") . "/drupal";' | sudo tee -a $HOME/workspace/drupal/sites/default/settings.php
+
 drush cc all
 
 echo ""

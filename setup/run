@@ -27,7 +27,7 @@ mysql-ctl start
 mysql-ctl status
 
 # Use a drush makefile
-drush make drupal7.drush.make drupal -y
+drush make ./setup/drupal7.drush.make drupal -y
 
 cd $HOME/workspace
 drush si --db-url=mysqli://$C9_USER@localhost/drupal --account-name=admin --account-pass=admin --site-name=OOP PHP Workshop --site-mail=$1 -y

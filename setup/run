@@ -3,7 +3,7 @@
 
 if [ -z $1 ]
 then
-  echo "Arguments<email>"
+  echo "Arguments <email>"
   echo ""
   echo "You must supply an email address to build this drupal install."
   exit

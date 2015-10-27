@@ -1,3 +1,4 @@
 #!/bin/bash
 
+# add drush, drupal's command line tool
 composer global require drush/drush:dev-master

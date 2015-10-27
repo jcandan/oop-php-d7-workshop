@@ -44,6 +44,7 @@ drush en views -y
 drush en views_ui -y
 #drush en advanced_help -y
 drush en environment_indicator -y
+drush dis overlay -y
 
 #devel stuff
 drush en devel -y

@@ -12,7 +12,8 @@ fi
 # add drush, drupal's command line tool
 composer global require drush/drush:dev-master
 echo 'export PATH=$HOME/.composer/vendor/bin:$PATH' >> $HOME/.bashrc
-source $HOME/.bashrc
+PS1='$ ' # running interactively, skip bashrc exit
+source ~/.bashrc
 
 # config git aliases
 git config --global alias.co checkout; 

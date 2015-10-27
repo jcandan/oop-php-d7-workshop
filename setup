@@ -19,3 +19,54 @@ git config --global alias.co checkout;
 git config --global alias.br branch; 
 git config --global alias.ci commit; 
 git config --global alias.st status;
+
+# install and start MySQL
+mysql-ctl install
+mysql-ctl start
+mysql-ctl status
+
+# Use a drush makefile
+drush make drupal7.drush.make drupal -y
+
+cd $HOME/workspace
+drush si --db-url=mysqli://$C9_USER@localhost/drupal --account-name=admin --account-pass=admin --site-name=OOP PHP Workshop --site-mail=$1 -y
+
+# Ctools & Views & proper toolbar.
+#drush en admin_menu -y
+#drush en admin_menu_toolbar -y
+#drush dis toolbar -y
+drush en module_filter -y
+drush en fpa -y
+
+drush en ctools -y
+drush en views -y
+drush en views_ui -y
+#drush en advanced_help -y
+drush en environment_indicator -y
+drush en adminimal_admin_menu -y
+
+#devel stuff
+drush en devel -y
+drush en devel_generate -y
+
+#migrate
+drush en migrate -y
+drush en migrate_ui -y
+
+drush en jquery_update -y
+drush en adminimal -y
+drush vset admin_theme adminimal -y
+drush vset file_temporary_path "/tmp"
+drush vset date_default_timezone "America/New_York"
+drush vset site_default_country "US"
+
+drush cc all
+
+echo ""
+echo "-------------"
+echo ""
+echo "Finished"
+echo ""
+echo "created Drupal 7 site. Username/passwd admin/admin."
+echo ""
+echo ""

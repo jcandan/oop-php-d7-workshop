@@ -14,7 +14,6 @@ composer global require drush/drush:dev-master
 echo 'export PATH=$HOME/.composer/vendor/bin:$PATH' >> $HOME/.bashrc
 PS1='$ ' # running interactively, skip bashrc exit
 source $HOME/.bashrc
-bash
 
 # config git aliases
 git config --global alias.co checkout; 

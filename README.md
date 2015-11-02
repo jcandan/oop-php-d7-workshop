@@ -11,6 +11,6 @@ $ tutorial/setup me@example.com
 
 Then right-click on `index.php` in the file tree and hit `Run`
 
-![](/tutorial/img/run-index.gif)
+![](https://github.com/jcandan/oop-php-d7-workshop/raw/master/tutorial/img/run-index.gif)
 
 ## <a name="#setting-up-cloud9"></a>Setting Up Cloud9

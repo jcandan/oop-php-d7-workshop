@@ -29,6 +29,7 @@ mysql-ctl status
 # Use a drush makefile
 cd $HOME/workspace
 drush make $HOME/workspace/.tutorial/drupal7.drush.make -y
+git co .gitignore
 
 drush si --db-url=mysqli://$C9_USER@127.0.0.1/drupal --account-name=admin --account-pass=admin --site-name=OOP\ PHP\ Workshop --site-mail=$1 -y
 

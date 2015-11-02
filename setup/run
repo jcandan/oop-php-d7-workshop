@@ -22,11 +22,9 @@ git config --global alias.ci commit;
 git config --global alias.st status;
 
 # install and start MySQL
-sudo apt-get update;
-sudo apt-get install php5-mysql;
-mysql-ctl install;
-mysql-ctl start;
-mysql-ctl status;
+mysql-ctl install
+mysql-ctl start
+mysql-ctl status
 
 # Use a drush makefile
 cd $HOME/workspace/drupal

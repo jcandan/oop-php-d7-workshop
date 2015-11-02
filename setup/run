@@ -27,10 +27,10 @@ mysql-ctl start
 mysql-ctl status
 
 # Use a drush makefile
-drush make $HOME/workspace/setup/drupal7.drush.make drupal --no-core -y
-
 cd $HOME/workspace/drupal
-drush si --db-url=mysqli://$C9_USER@$IP/drupal --account-name=admin --account-pass=admin --site-name=OOP\ PHP\ Workshop --site-mail=$1 -y
+drush make $HOME/workspace/setup/drupal7.drush.make -y
+
+drush si --db-url=mysqli://$C9_USER@127.0.0.1/drupal --account-name=admin --account-pass=admin --site-name=OOP\ PHP\ Workshop --site-mail=$1 -y
 
 # Ctools & Views & proper toolbar.
 drush en admin_menu -y

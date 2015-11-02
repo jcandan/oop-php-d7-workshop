@@ -1,1 +1,1 @@
-# oop-php-d7-workshop
+# OOP PHP for Beginners Workshop

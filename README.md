@@ -31,6 +31,25 @@ guidelines provided as part of the documentation for that API (if provided).
 5. Article Migration
 
 ### 1. Info file
+
+```php
+name = OOP Example
+core = 7.x
+package = OOP Workshop
+version = 7.x-0.1
+```
+
+```php
+dependencies[] = features
+dependencies[] = text
+features[features_api][] = api:2
+features[field_base][] = field_user_first_name
+features[field_base][] = field_user_last_name
+features[field_instance][] = user-user-field_user_first_name
+features[field_instance][] = user-user-field_user_last_name
+project path = sites/all/modules/custom
+```
+
 ### 2. Migrate API
 
 ```php

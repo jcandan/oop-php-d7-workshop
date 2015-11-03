@@ -1,0 +1,12 @@
+name = OOP Example
+core = 7.x
+package = OOP Workshop
+version = 7.x-0.1
+dependencies[] = features
+dependencies[] = text
+features[features_api][] = api:2
+features[field_base][] = field_user_first_name
+features[field_base][] = field_user_last_name
+features[field_instance][] = user-user-field_user_first_name
+features[field_instance][] = user-user-field_user_last_name
+project path = sites/all/modules/custom

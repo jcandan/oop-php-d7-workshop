@@ -33,9 +33,7 @@ guidelines provided as part of the documentation for that API (if provided).
 ### 1. Info file
 ### 2. Migrate API
 
-```
-<?php
-
+```php
 /**
  * Implements hook_migrate_api()
  * @return array
@@ -65,9 +63,7 @@ function oop_example_migrate_api () {
 
 ### 3. Base Migration Class
 
-```
-<?php
-
+```php
 abstract class OOPExampleMigration extends Migration {
   public function __construct($arguments = array()) {
     // Always call the parent constructor first for basic setup

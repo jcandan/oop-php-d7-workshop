@@ -24,13 +24,15 @@ New Window" icon on the right of the address bar for the new browser tab that op
 Generally, when you're working with a library, API, plugin, or module, you'll need to brush up on the implementation 
 guidelines provided as part of the documentation for that API (if provided).
 
-1. Info file
-2. Migrate API
-3. Base Migration Class
-4. Staff Migration
-5. Article Migration
+1. Assumptions
+2. Info file
+3. Migrate API
+4. Base Migration Class
+5. Staff Migration
+6. Article Migration
 
-### 1. Info file
+### 1. Assumptions
+### 2. Info file
 
 ```php
 name = OOP Example
@@ -50,7 +52,7 @@ features[field_instance][] = user-user-field_user_last_name
 project path = sites/all/modules/custom
 ```
 
-### 2. Migrate API
+### 3. Migrate API
 
 ```php
 /**
@@ -88,7 +90,7 @@ function oop_example_migrate_api () {
     ),
 ```
 
-### 3. Base Migration Class
+### 4. Base Migration Class
 
 ```php
 abstract class OOPExampleMigration extends Migration {
@@ -114,7 +116,7 @@ abstract class OOPExampleMigration extends Migration {
 ```
 
 
-### 4. Staff Migration
-### 5. Article Migration
+### 5. Staff Migration
+### 6. Article Migration
 
 ## <a name="#setting-up-cloud9"></a>Setting Up Cloud9

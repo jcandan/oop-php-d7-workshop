@@ -17,4 +17,13 @@ At this point, you may open the working Drupal site by clicking `Preview` at the
 
 ![](https://github.com/jcandan/oop-php-d7-workshop/raw/master/tutorial/img/preview.gif)
 
+
+## Building a Migrate module
+
+1. Info file
+2. Migrate API
+3. Base Migration Class
+4. Staff Migration
+5. Article Migration
+
 ## <a name="#setting-up-cloud9"></a>Setting Up Cloud9

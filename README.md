@@ -36,6 +36,38 @@ guidelines provided as part of the documentation for that API (if provided).
 ```
 <?php
 
+/**
+ * Implements hook_migrate_api()
+ * @return array
+ */
+function oop_example_migrate_api () {
+  return array(
+    'api' => 2,
+    'groups' => array(
+      'oop_workshop' => array(
+        'title' => t('OOP Workshop'),
+      ),
+    ),
+    'migrations' => array(
+      'OOPExampleUser' => array(
+        'class_name' => 'OOPExampleUserMigration',
+        'group_name' => 'oop_workshop',
+      ),
+      'OOPExampleArticle' => array(
+        'class_name' => 'OOPExampleArticleMigration',
+        'group_name' => 'oop_workshop',
+      ),
+    ),
+  );
+
+}
+```
+
+### 3. Base Migration Class
+
+```
+<?php
+
 abstract class OOPExampleMigration extends Migration {
   public function __construct($arguments = array()) {
     // Always call the parent constructor first for basic setup
@@ -51,7 +83,6 @@ abstract class OOPExampleMigration extends Migration {
 }
 ```
 
-### 3. Base Migration Class
 ### 4. Staff Migration
 ### 5. Article Migration
 

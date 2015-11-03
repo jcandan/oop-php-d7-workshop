@@ -84,10 +84,18 @@ function oop_example_migrate_api () {
 
 ```php
 abstract class OOPExampleMigration extends Migration {
+
+}
+```
+
+```php
   public function __construct($arguments = array()) {
     // Always call the parent constructor first for basic setup
     parent::__construct($arguments);
+  }
+```
 
+```php
     // With migrate_ui enabled, migration pages will indicate people involved in
     // the particular migration, with their role and contact info. We default the
     // list in the shared class; it can be overridden for specific migrations.
@@ -95,8 +103,8 @@ abstract class OOPExampleMigration extends Migration {
       new MigrateTeamMember('James Candan', 'james@codej.us', t('Engineer')),
     );
   }
-}
 ```
+
 
 ### 4. Staff Migration
 ### 5. Article Migration

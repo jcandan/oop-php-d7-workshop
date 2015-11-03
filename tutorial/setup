@@ -39,6 +39,7 @@ drush en admin_menu_toolbar -y
 drush dis toolbar -y
 drush en module_filter -y
 drush en fpa -y
+drush en features -y
 
 drush en ctools -y
 drush en views -y
@@ -73,3 +74,4 @@ echo "created Drupal 7 site."
 echo "Username and password: admin | admin."
 echo ""
 echo ""
+

@@ -30,4 +30,10 @@ guidelines provided as part of the documentation for that API (if provided).
 4. Staff Migration
 5. Article Migration
 
+### 1. Info file
+### 2. Migrate API
+### 3. Base Migration Class
+### 4. Staff Migration
+### 5. Article Migration
+
 ## <a name="#setting-up-cloud9"></a>Setting Up Cloud9

@@ -58,8 +58,19 @@ project path = sites/all/modules/custom
  * @return array
  */
 function oop_example_migrate_api () {
+  return array();
+}
+```
+
+```php
   return array(
     'api' => 2,
+    'groups' => array(),
+    'migrations' => array(),
+  );
+```
+
+```php
     'groups' => array(
       'oop_workshop' => array(
         'title' => t('OOP Workshop'),
@@ -75,9 +86,6 @@ function oop_example_migrate_api () {
         'group_name' => 'oop_workshop',
       ),
     ),
-  );
-
-}
 ```
 
 ### 3. Base Migration Class

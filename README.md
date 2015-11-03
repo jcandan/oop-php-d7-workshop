@@ -21,6 +21,9 @@ New Window" icon on the right of the address bar for the new browser tab that op
 
 ## Building a Migrate module
 
+Generally, when you're working with a library, API, plugin, or module, you'll need to brush up on the implementation 
+guidelines provided as part of the documentation for that API (if provided).
+
 1. Info file
 2. Migrate API
 3. Base Migration Class

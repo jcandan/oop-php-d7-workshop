@@ -115,6 +115,7 @@ and contact info. This is accomplished via a `team` property, an array of `Migra
     );
   }
 ```
+`MigrateTeamMember` is found in [team.inc](http://www.drupalcontrib.org/api/drupal/contributions%21migrate%21includes%21team.inc/class/MigrateTeamMember/7)
 
 
 ### 5. Staff Migration

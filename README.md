@@ -104,11 +104,12 @@ abstract class OOPExampleMigration extends Migration {
     parent::__construct($arguments);
   }
 ```
+#### List Team members
+
+With `migrate_ui` enabled, migration pages will indicate people involved in each migration, with their role 
+and contact info. This is accomplished via a `team` property, an array of `MigrateTeamMember` objects.
 
 ```php
-    // With migrate_ui enabled, migration pages will indicate people involved in
-    // the particular migration, with their role and contact info. We default the
-    // list in the shared class; it can be overridden for specific migrations.
     $this->team = array(
       new MigrateTeamMember('James Candan', 'james@codej.us', t('Engineer')),
     );

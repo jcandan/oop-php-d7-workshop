@@ -5,7 +5,7 @@
 If you haven't already, read and follow the [Setting Up Cloud9](#setting-up-cloud9) instructions below.
 
 First thing, run the following command:
-```
+```sh
 $ tutorial/setup me@example.com
 ```
 

@@ -11,4 +11,5 @@ features[field_instance][] = user-user-field_user_first_name
 features[field_instance][] = user-user-field_user_last_name
 files[] = oop_example.migrate.inc
 files[] = includes/OOPExampleMigration.inc
+files[] = includes/OOPExampleUserMigration.inc
 project path = sites/all/modules/custom

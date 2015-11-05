@@ -36,5 +36,31 @@ class OOPExampleUserMigration extends OOPExampleMigration {
       MigrateDestinationUser::getKeySchema()
     );
 
+    $this->addFieldMapping('mail', 'Email');
+
+    $this->addUnmigratedSources(array(
+      'Id',
+      'Name',
+    ));
+
+    $this->addUnmigratedDestinations(array(
+      'uid',
+      'pass',
+      'created',
+      'access',
+      'login',
+      'roles',
+      'role_names',
+      'picture',
+      'signature',
+      'signature_format',
+      'timezone',
+      'language',
+      'theme',
+      'init',
+      'data',
+      'is_new',
+      'path',
+    ));
   }
 }

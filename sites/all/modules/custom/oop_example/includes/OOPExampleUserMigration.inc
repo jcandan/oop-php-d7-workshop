@@ -49,6 +49,7 @@ class OOPExampleUserMigration extends OOPExampleMigration {
     $this->addFieldMapping('mail', 'Email');
     $this->addFieldMapping('field_user_first_name', 'first_name');
     $this->addFieldMapping('field_user_last_name', 'last_name');
+    $this->addFieldMapping('status')->defaultValue(1);
 
     $this->addUnmigratedSources(array(
       'Id',

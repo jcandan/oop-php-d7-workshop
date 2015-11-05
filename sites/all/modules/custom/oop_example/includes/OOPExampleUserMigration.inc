@@ -23,7 +23,13 @@ class OOPExampleUserMigration extends OOPExampleMigration {
       2 => array('Email', t('Email')),
     );
 
-    $this->source = new MigrateSourceCSV($csv, $columns, array('header_rows' => 1));
+    $source_fields = array(
+      'first_name' => t('First name'),
+      'last_name' => t('Last name'),
+      'name' => t('Drupal username'),
+    );
+
+    $this->source = new MigrateSourceCSV($csv, $columns, array('header_rows' => 1), $source_fields);
     $this->destination = new MigrateDestinationUser(array('md5_passwords' => TRUE));
 
     $this->map = new MigrateSQLMap(
@@ -39,7 +45,10 @@ class OOPExampleUserMigration extends OOPExampleMigration {
       MigrateDestinationUser::getKeySchema()
     );
 
+    $this->addFieldMapping('name', 'name');
     $this->addFieldMapping('mail', 'Email');
+    $this->addFieldMapping('field_user_first_name', 'first_name');
+    $this->addFieldMapping('field_user_last_name', 'last_name');
 
     $this->addUnmigratedSources(array(
       'Id',
@@ -65,5 +74,12 @@ class OOPExampleUserMigration extends OOPExampleMigration {
       'is_new',
       'path',
     ));
+  }
+
+  public function prepareRow($row) {
+    $names = explode(" ", $row->Name);
+    $row->first_name = array_shift($names);
+    $row->last_name = array_pop($names);
+    $row->name = strtolower($row->first_name . $row->last_name);
   }
 }

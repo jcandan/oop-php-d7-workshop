@@ -10,6 +10,9 @@ class OOPExampleUserMigration extends OOPExampleMigration {
   public function __construct ($args) {
     parent::__construct($args);
 
+    // Avoid known line ending issue: "Invalid data value" at drupal.org/node/1152158#InvalidDataValue
+    ini_set('auto_detect_line_endings', TRUE);
+
     $this->description = t('Import Users from CSV file.');
 
     $csv = drupal_get_path('module', 'oop_example') . '/data/staff.csv';

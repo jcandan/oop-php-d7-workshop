@@ -21,5 +21,20 @@ class OOPExampleUserMigration extends OOPExampleMigration {
     );
 
     $this->source = new MigrateSourceCSV($csv, $columns, array('header_rows' => 1));
+    $this->destination = new MigrateDestinationUser(array('md5_passwords' => TRUE));
+
+    $this->map = new MigrateSQLMap(
+      $this->machineName,
+      array(
+        'ID' => array(
+          'type' => 'varchar',
+          'length' => 60,
+          'not null' => true,
+          'description' => 'User ID',
+        ),
+      ),
+      MigrateDestinationUser::getKeySchema()
+    );
+
   }
 }

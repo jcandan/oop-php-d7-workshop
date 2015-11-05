@@ -7,4 +7,8 @@
 
 class OOPExampleUserMigration extends OOPExampleMigration {
 
+  public function __construct ($args) {
+    parent::__construct($args);
+
+  }
 }

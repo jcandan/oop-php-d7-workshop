@@ -6,7 +6,7 @@ If you haven't already, read and follow the [Setting Up Cloud9](#setting-up-clou
 
 First thing, run the following command:
 ```sh
-$ tutorial/setup me@example.com
+$ tutorial/setup me@example.com; source ~/.bashrc;
 ```
 
 Then right-click on `index.php` in the file tree and hit `Run`

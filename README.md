@@ -191,6 +191,8 @@ class OOPExampleUserMigration extends OOPExampleMigration {
 ```
 
 ```sh
+$ drush mreg
+$ drush ma oopexampleuser
 $ drush ma oopexampleuser | awk '{print $1}'
 ```
 

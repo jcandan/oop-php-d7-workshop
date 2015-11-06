@@ -25,14 +25,19 @@ Generally, when you're working with a library, API, plugin, or module, you'll ne
 guidelines provided as part of the documentation for that API (if provided).
 
 1. Assumptions
-2. Info file
 3. Migrate API
 4. Base Migration Class
 5. Staff Migration
 6. Article Migration
 
 ### 1. Assumptions
-### 2. Info file
+
+We're working in an existing module. We assume you know how to build a Drupal 7 module. This one is a Features export 
+that gives our Users a First and Last name field.
+
+#### Info File
+
+##### Required Info
 
 ```php
 name = OOP Example
@@ -40,6 +45,8 @@ core = 7.x
 package = OOP Workshop
 version = 7.x-0.1
 ```
+
+##### Features info
 
 ```php
 dependencies[] = features
@@ -53,6 +60,12 @@ project path = sites/all/modules/custom
 ```
 
 ### 3. Migrate API
+
+Add a new file to our includes list in the info file:
+
+```php
+files[] = oop_example.migrate.inc
+```
 
 ```php
 /**
@@ -92,6 +105,12 @@ function oop_example_migrate_api () {
 
 ### 4. Base Migration Class
 
+Add a new file to our includes list in the info file:
+
+```php
+files[] = includes/OOPExampleMigration.inc
+```
+
 ```php
 abstract class OOPExampleMigration extends Migration {
 
@@ -119,6 +138,12 @@ and contact info. This is accomplished via a `team` property, an array of `Migra
 
 
 ### 5. Staff Migration
+
+Add a new file to our includes list in the info file:
+
+```php
+files[] = includes/OOPExampleUserMigration.inc
+```
 
 ```php
 class OOPExampleUserMigration extends OOPExampleMigration {

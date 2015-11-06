@@ -63,6 +63,7 @@ drush vset site_default_country "US"
 
 echo '$base_url = "https://" . getenv("C9_HOSTNAME");' | sudo tee -a $HOME/workspace/sites/default/settings.php
 
+drush en oop_example -y
 drush cc all
 
 echo ""

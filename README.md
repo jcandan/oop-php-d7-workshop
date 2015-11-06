@@ -119,6 +119,112 @@ and contact info. This is accomplished via a `team` property, an array of `Migra
 
 
 ### 5. Staff Migration
+
+```php
+class OOPExampleUserMigration extends OOPExampleMigration {
+
+}
+```
+
+```php
+  public function __construct ($args) {
+    parent::__construct($args);
+
+    $this->description = t('Import Users from Dover Pictura');
+  }
+```
+
+```php
+    $csv = drupal_get_path('module', 'oop_example') . '/data/staff.csv';
+
+    $columns = array(
+      0 => array('ID', t('ID')),
+      1 => array('Name', t('Name')),
+      2 => array('Email', t('Email')),
+    );
+
+    $this->source = new MigrateSourceCSV($csv, $columns, array('header_rows' => 1));
+```
+
+```php
+    $this->destination = new MigrateDestinationUser(array('md5_passwords' => TRUE));
+
+    $this->map = new MigrateSQLMap(
+      $this->machineName,
+      array(
+        'ID' => array(
+          'type' => 'varchar',
+          'length' => 60,
+          'not null' => true,
+          'description' => 'User ID',
+        ),
+      ),
+      MigrateDestinationUser::getKeySchema()
+    );
+```
+
+```php
+    $this->addFieldMapping('mail', 'Email');
+    $this->addFieldMapping('name', 'name');
+    $this->addFieldMapping('field_user_first_name', 'first_name');
+    $this->addFieldMapping('field_user_last_name', 'last_name');
+```
+
+```php
+    $source_fields = array(
+      'first_name' => t('First name'),
+      'last_name' => t('Last name'),
+      'name' => t('Drupal username'),
+    );
+
+    $this->source = new MigrateSourceCSV($csv, $columns, array('header_rows' => 1), $source_fields);
+
+    ...
+  }
+
+  public function prepareRow($row) {
+    $names = explode(" ", $row->Name);
+    $row->first_name = array_shift($names);
+    $row->last_name = array_pop($names);
+    $row->name = strtolower($row->first_name . $row->last_name);
+  }
+```
+
+```sh
+$ drush ma oopexampleuser | awk '{print $1}'
+```
+
+```php
+    $this->addUnmigratedSources(array(
+      'Id',
+      'Name',
+    ));
+
+    $this->addUnmigratedDestinations(array(
+      'uid',
+      'pass',
+      'created',
+      'access',
+      'login',
+      'roles',
+      'role_names',
+      'picture',
+      'signature',
+      'signature_format',
+      'timezone',
+      'language',
+      'theme',
+      'init',
+      'data',
+      'is_new',
+      'path',
+    ));
+```
+
+```php
+    $this->addFieldMapping('status')->defaultValue(1);
+```
+
 ### 6. Article Migration
 
 ## <a name="#setting-up-cloud9"></a>Setting Up Cloud9

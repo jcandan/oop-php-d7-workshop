@@ -96,10 +96,6 @@ function oop_example_migrate_api () {
         'class_name' => 'OOPExampleUserMigration',
         'group_name' => 'oop_workshop',
       ),
-      'OOPExampleArticle' => array(
-        'class_name' => 'OOPExampleArticleMigration',
-        'group_name' => 'oop_workshop',
-      ),
     ),
 ```
 
